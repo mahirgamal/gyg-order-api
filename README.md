@@ -44,7 +44,6 @@ sam init
       2- Custom Template Location
 ```
 ##### Choice: 1
-
 ##### Choose an AWS Quick Start application template
 ```
 1- Hello World Example
@@ -65,7 +64,6 @@ sam init
 16- Machine Learning
 ```
 ##### Template: 7
-
 ##### Which runtime would you like to use?
 ```
 1- dotnet8
@@ -75,30 +73,12 @@ sam init
 5- nodejs16.x
 ```
 ##### Runtime: 3
-
-
 ##### Would you like to enable X-Ray tracing on the function(s) in your application?  [y/N]: y
-
 ##### Would you like to enable monitoring using CloudWatch Application Insights?
-
 ##### Would you like to set Structured Logging in JSON format on your Lambda functions?  [y/N]: y
-
 ##### Project name [sam-app]: order-api
 
-####Then it will give a summary for the project
-```
-    -----------------------
-    Generating application:
-    -----------------------
-    Name: order-api
-    Runtime: nodejs20.x
-    Architectures: x86_64
-    Dependency Manager: npm
-    Application Template: quick-start-web
-    Output Directory: .
-    Configuration file: order-api/samconfig.toml
-```
-  
+#### After creating the project, delete all unnecessary folders and files.  
 ![alt text](image-1.png)
 
 
