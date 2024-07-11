@@ -1,7 +1,7 @@
 
 # Order Management API
 
-This project demonstrates how to build a serverless API for managing orders using AWS Lambda, API Gateway, and DynamoDB with the AWS Serverless Application Model (SAM).
+This project demonstrates how to build a serverless API for managing orders using AWS Lambda, API Gateway, and DynamoDB, utilizing the AWS Serverless Application Model (SAM).
 
 ```
 [Client] --> [API Gateway] --> [AWS Lambda Functions] --> [DynamoDB]
@@ -11,11 +11,15 @@ This project demonstrates how to build a serverless API for managing orders usin
 
 ## Prerequisites
 
-- AWS CLI: [Install AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
-- AWS SAM CLI: [Install AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
-- Node.js and npm: [Install Node.js](https://nodejs.org/)
+Before you begin, ensure you have the following tools installed:
+
+- **AWS CLI**: [Install AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
+- **AWS SAM CLI**: [Install AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
+- **Node.js and npm**: [Install Node.js](https://nodejs.org/)
 
 ## Project Structure
+
+The project is organized as follows:
 
 ```
 order-api/
@@ -31,60 +35,65 @@ order-api/
 
 ### 1. Initialize the Project with SAM
 
-Use AWS SAM CLI to initialize a new project:
+To start, initialize a new SAM project using the AWS SAM CLI:
 
 ```bash
 sam init
 ```
-#### Answer to the these steps:
 
-##### Which template source would you like to use?
-```
-      1- AWS Quick Start Templates
-      2- Custom Template Location
-```
-##### Choice: 1
-##### Choose an AWS Quick Start application template
-```
-1- Hello World Example
-2- Data processing
-3- Hello World Example with Powertools for AWS Lambda
-4- Multi-step workflow
-5- Scheduled task
-6- Standalone function
-7- Serverless API
-8- Infrastructure event management
-9- Lambda Response Streaming
-10- Serverless Connector Hello World Example
-11- Multi-step workflow with Connectors
-12- GraphQLApi Hello World Example
-13- Full Stack
-14- Lambda EFS example
-15- DynamoDB Example
-16- Machine Learning
-```
-##### Template: 7
-##### Which runtime would you like to use?
-```
-1- dotnet8
-2- dotnet6
-3- nodejs20.x
-4- nodejs18.x
-5- nodejs16.x
-```
-##### Runtime: 3
-##### Would you like to enable X-Ray tracing on the function(s) in your application?  [y/N]: y
-##### Would you like to enable monitoring using CloudWatch Application Insights?
-##### Would you like to set Structured Logging in JSON format on your Lambda functions?  [y/N]: y
-##### Project name [sam-app]: order-api
+When prompted, provide the following inputs:
 
-#### After creating the project, delete all unnecessary folders and files.  
+1. **Template Source**:
+    ```
+    1- AWS Quick Start Templates
+    2- Custom Template Location
+    ```
+    Select option `1`.
+
+2. **AWS Quick Start Application Template**:
+    ```
+    1- Hello World Example
+    2- Data processing
+    3- Hello World Example with Powertools for AWS Lambda
+    4- Multi-step workflow
+    5- Scheduled task
+    6- Standalone function
+    7- Serverless API
+    8- Infrastructure event management
+    9- Lambda Response Streaming
+    10- Serverless Connector Hello World Example
+    11- Multi-step workflow with Connectors
+    12- GraphQLApi Hello World Example
+    13- Full Stack
+    14- Lambda EFS example
+    15- DynamoDB Example
+    16- Machine Learning
+    ```
+    Select option `7`.
+
+3. **Runtime**:
+    ```
+    1- dotnet8
+    2- dotnet6
+    3- nodejs20.x
+    4- nodejs18.x
+    5- nodejs16.x
+    ```
+    Select option `3`.
+
+4. **Enable X-Ray Tracing**: `y`
+5. **Enable CloudWatch Application Insights**: `y`
+6. **Set Structured Logging in JSON Format**: `y`
+7. **Project Name**: `order-api`
+
+After creating the project, delete any unnecessary folders and files to clean up the directory.
+
 ![alt text](image-1.png)
 
 
 ### 2. Navigate to the Project Directory
 
-Navigate into your project directory:
+Move into your project directory:
 
 ```bash
 cd order-api
@@ -92,7 +101,7 @@ cd order-api
 
 ### 3. Install AWS SDK
 
-Install the AWS SDK, which is required to interact with AWS services like DynamoDB:
+Install the AWS SDK to interact with AWS services like DynamoDB:
 
 ```bash
 npm install aws-sdk
@@ -100,7 +109,7 @@ npm install aws-sdk
 
 ### 4. Navigate to the SRC Directory
 
-Ensure the necessary directory structure is in place:
+Ensure the directory structure is correctly set up:
 
 ```bash
 cd src
@@ -108,13 +117,11 @@ cd src
 
 ### 5. Create the `orders.js` Handler
 
-Create the [`orders.js`](https://github.com/mahirgamal/gyg-order-api/blob/main/src/orders.js) file in the `src` directory and add your Lambda function logic:
-
+Create the `orders.js` file in the `src` directory and add your Lambda function logic.
 
 ### 6. Update the `template.yaml`
 
-Ensure your [`template.yaml`](https://github.com/mahirgamal/gyg-order-api/blob/main/template.yaml) file in the root directory is configured as follows:
-
+Ensure your `template.yaml` file in the root directory is properly configured.
 
 ### 7. Build and Deploy with AWS SAM
 
@@ -132,31 +139,40 @@ Deploy the application using SAM CLI. The `--guided` flag will prompt you for de
 
 ```bash
 sam deploy --guided
+```
 
+During the deployment, you will be prompted to provide various configuration details. Below is an example of the prompts and the recommended responses:
+
+1. **Stack Name**: `order-api`
+2. **AWS Region**: `ap-southeast-2`
+3. **Confirm changes before deploy**: `y`
+4. **Allow SAM CLI IAM role creation**: `y`
+5. **Disable rollback**: `n`
+6. **OrdersFunction has no authentication. Is this okay?**: `y`
+7. **Save arguments to configuration file**: `y`
+8. **SAM configuration file**: `samconfig.toml`
+9. **SAM configuration environment**: `default`
+
+Here's an example of how the prompt responses might look:
+
+```text
         Setting default arguments for 'sam deploy'
         =========================================
         Stack Name [order-api]: 
         AWS Region [ap-southeast-2]:
-        #Shows you resources changes to be deployed and require a 'Y' to initiate deploy
+        # Shows you resources changes to be deployed and require a 'Y' to initiate deploy
         Confirm changes before deploy [Y/n]: y
-        #SAM needs permission to be able to create roles to connect to the resources in your template
+        # SAM needs permission to be able to create roles to connect to the resources in your template
         Allow SAM CLI IAM role creation [Y/n]: y
-        #Preserves the state of previously provisioned resources when an operation fails
+        # Preserves the state of previously provisioned resources when an operation fails
         Disable rollback [y/N]: n
-        OrdersFunction has no authentication. Is this okay? [y/N]: y
-        OrdersFunction has no authentication. Is this okay? [y/N]: y
         OrdersFunction has no authentication. Is this okay? [y/N]: y
         Save arguments to configuration file [Y/n]: y
         SAM configuration file [samconfig.toml]:
         SAM configuration environment [default]:
-
-
-Previewing CloudFormation changeset before deployment
-======================================================
-Deploy this changeset? [y/N]: y 
 ```
 
-Follow the prompts to configure the deployment settings (e.g., stack name, AWS region, etc.). Once the deployment is complete, SAM will output the API Gateway endpoint URL.
+Follow the prompts to configure the deployment settings. Once the deployment is complete, SAM will output the API Gateway endpoint URL.
 
 ### 8. Testing the API
 
