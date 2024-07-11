@@ -82,7 +82,13 @@ Before you begin, ensure you have the following tools installed:
                     +----------------+
                     |  API Gateway   |
                     +----------------+
-                            |
+                            |                               +-----------------------------+
+                            |                               |    Additional Services      |
+                            |                               |  +-----------------------+  |
+                            |                               |  | CloudWatch            |  |
+                            |                               |  | (monitoring & logging)|  |
+                            |                               |  +-----------------------+  |
+                            |                               +-----------------------------+
                             v
                     +----------------+
                     | AWS Lambda     |
@@ -93,15 +99,9 @@ Before you begin, ensure you have the following tools installed:
                     +----------------+
                     |   DynamoDB     |
                     +----------------+
-                            |
-                            v
-            +-----------------------------+
-            |    Additional Services      |
-            |  +-----------------------+  |
-            |  | CloudWatch            |  |
-            |  | (monitoring & logging)|  |
-            |  +-----------------------+  |
-            +-----------------------------+
+                            
+                            
+            
 ```
 
 ### Project Structure
