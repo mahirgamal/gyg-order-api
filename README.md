@@ -7,9 +7,11 @@ This project demonstrates how to build a serverless API for managing orders usin
 
 ### Prerequisites
 
-- AWS Account
-- Java JDK and Maven installed
-- AWS Management Console access
+Before you begin, ensure you have the following tools installed:
+
+- **AWS CLI**: [Install AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
+- **AWS SAM CLI**: [Install AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
+- **Node.js and npm**: [Install Node.js](https://nodejs.org/)
 
 ### Architecture Overview
 
@@ -101,14 +103,6 @@ This project demonstrates how to build a serverless API for managing orders usin
             |  +-----------------------+  |
             +-----------------------------+
 ```
-
-### Prerequisites
-
-Before you begin, ensure you have the following tools installed:
-
-- **AWS CLI**: [Install AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
-- **AWS SAM CLI**: [Install AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
-- **Node.js and npm**: [Install Node.js](https://nodejs.org/)
 
 ### Project Structure
 
