@@ -69,38 +69,37 @@ This project demonstrates how to build a serverless API for managing orders usin
    - DynamoDB’s on-demand capacity mode charges only for the read/write throughput consumed.
    - API Gateway charges are based on the number of API calls.
 
+### The Architecture
+
 ```
-          +------------+
-          |   Client   |
-          +------------+
-                |
-                v
-        +----------------+
-        |  API Gateway   |
-        +----------------+
-                |
-                v
-        +----------------+
-        | AWS Lambda     |
-        |  Functions     |
-        +----------------+
-                |
-                v
-        +----------------+
-        |   DynamoDB     |
-        +----------------+
-                |
-                v
-+-----------------------------+
-|    Additional Services      |
-|  +-----------------------+  |
-|  | S3 (static content)   |  |
-|  +-----------------------+  |
-|  +-----------------------+  |
-|  | CloudWatch            |  |
-|  | (monitoring & logging)|  |
-|  +-----------------------+  |
-+----------------------------+
+                      +------------+
+                      |   Client   |
+                      +------------+
+                            |
+                            v
+                    +----------------+
+                    |  API Gateway   |
+                    +----------------+
+                            |
+                            v
+                    +----------------+
+                    | AWS Lambda     |
+                    |  Functions     |
+                    +----------------+
+                            |
+                            v
+                    +----------------+
+                    |   DynamoDB     |
+                    +----------------+
+                            |
+                            v
+            +-----------------------------+
+            |    Additional Services      |
+            |  +-----------------------+  |
+            |  | CloudWatch            |  |
+            |  | (monitoring & logging)|  |
+            |  +-----------------------+  |
+            +-----------------------------+
 ```
 
 ### Prerequisites
