@@ -36,15 +36,15 @@ Use AWS SAM CLI to initialize a new project:
 ```bash
 sam init
 ```
-Answer to the these steps:
+#### Answer to the these steps:
 
--Which template source would you like to use?
-
+##### Which template source would you like to use?
+```
         1 - AWS Quick Start Templates
-
         2 - Custom Template Location
+```
 
-Choice: 1
+##### Choice: 1
 
 -Choose an AWS Quick Start application template
 
