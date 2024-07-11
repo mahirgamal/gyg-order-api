@@ -70,9 +70,37 @@ This project demonstrates how to build a serverless API for managing orders usin
    - API Gateway charges are based on the number of API calls.
 
 ```
-[Client] --> [API Gateway] --> [AWS Lambda Functions] --> [DynamoDB]
-                           --> [S3 (for static content)]
-                           --> [CloudWatch (for monitoring and logging)]
+          +------------+
+          |   Client   |
+          +------------+
+                |
+                v
+        +----------------+
+        |  API Gateway   |
+        +----------------+
+                |
+                v
+        +----------------+
+        | AWS Lambda     |
+        |  Functions     |
+        +----------------+
+                |
+                v
+        +----------------+
+        |   DynamoDB     |
+        +----------------+
+                |
+                v
++-----------------------------+
+|    Additional Services      |
+|  +-----------------------+  |
+|  | S3 (static content)   |  |
+|  +-----------------------+  |
+|  +-----------------------+  |
+|  | CloudWatch            |  |
+|  | (monitoring & logging)|  |
+|  +-----------------------+  |
++----------------------------+
 ```
 
 ### Prerequisites
