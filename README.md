@@ -315,6 +315,132 @@ Deploy the application using SAM CLI. The `--guided` flag will prompt you for de
 
 ```bash
 sam deploy --guided
+Configuring SAM deploy
+======================
+
+        Looking for config file [samconfig.toml] :  Found
+        Reading default arguments  :  Success
+
+        Setting default arguments for 'sam deploy'
+        =========================================
+        Stack Name [order-api]: 
+        AWS Region [ap-southeast-2]:
+        #Shows you resources changes to be deployed and require a 'Y' to initiate deploy
+        Confirm changes before deploy [Y/n]: y
+        #SAM needs permission to be able to create roles to connect to the resources in your template
+        Allow SAM CLI IAM role creation [Y/n]: y
+        #Preserves the state of previously provisioned resources when an operation fails
+        Disable rollback [y/N]: n
+        OrdersFunction has no authentication. Is this okay? [y/N]: y
+        OrdersFunction has no authentication. Is this okay? [y/N]: y
+        OrdersFunction has no authentication. Is this okay? [y/N]: y
+        Save arguments to configuration file [Y/n]: y
+        SAM configuration file [samconfig.toml]:
+        SAM configuration environment [default]:
+
+        Looking for resources needed for deployment:
+
+        Managed S3 bucket: aws-sam-cli-managed-default-samclisourcebucket-u9umwdgwuf9g
+        A different default S3 bucket can be set in samconfig.toml and auto resolution of buckets turned off by setting resolve_s3=False
+
+        Parameter "stack_name=order-api" in [default.deploy.parameters] is defined as a global parameter [default.global.parameters].
+        This parameter will be only saved under [default.global.parameters] in E:\qsr-ordering-system\order-api\samconfig.toml.
+
+        Saved arguments to config file
+        Running 'sam deploy' for future deployments will use the parameters saved above.
+        The above parameters can be changed by modifying samconfig.toml
+        Learn more about samconfig.toml syntax at
+        https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-config.html
+
+        Uploading to order-api/31848c0dc00b7f21a679bb4ad9548b2f  16613451 / 16613451  (100.00%)
+
+        Deploying with following values
+        ===============================
+        Stack name                   : order-api
+        Region                       : ap-southeast-2
+        Confirm changeset            : True
+        Disable rollback             : False
+        Deployment s3 bucket         : aws-sam-cli-managed-default-samclisourcebucket-u9umwdgwuf9g
+        Capabilities                 : ["CAPABILITY_IAM"]
+        Parameter overrides          : {}
+        Signing Profiles             : {}
+
+Initiating deployment
+=====================
+
+        Uploading to order-api/9b92ef4cfa829d26b1ddb4adc768d570.template  1554 / 1554  (100.00%)
+
+
+Waiting for changeset to be created..
+
+CloudFormation stack changeset
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------      
+Operation                                         LogicalResourceId                                 ResourceType                                      Replacement
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------      
++ Add                                             OrderTable                                        AWS::DynamoDB::Table                              N/A
++ Add                                             OrdersFunctionGetOrderPermissionProd              AWS::Lambda::Permission                           N/A
++ Add                                             OrdersFunctionPostOrderPermissionProd             AWS::Lambda::Permission                           N/A
++ Add                                             OrdersFunctionPutOrderPermissionProd              AWS::Lambda::Permission                           N/A
++ Add                                             OrdersFunctionRole                                AWS::IAM::Role                                    N/A
++ Add                                             OrdersFunction                                    AWS::Lambda::Function                             N/A
++ Add                                             ServerlessRestApiDeployment8d89a2308f             AWS::ApiGateway::Deployment                       N/A
++ Add                                             ServerlessRestApiProdStage                        AWS::ApiGateway::Stage                            N/A
++ Add                                             ServerlessRestApi                                 AWS::ApiGateway::RestApi                          N/A
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------      
+
+
+Changeset created successfully. arn:aws:cloudformation:ap-southeast-2:654654270023:changeSet/samcli-deploy1720691930/2969fd9b-2628-4590-82f8-3aa2f3805145
+
+
+Previewing CloudFormation changeset before deployment
+======================================================
+Deploy this changeset? [y/N]: y 
+
+2024-07-11 19:59:00 - Waiting for stack create/update to complete
+
+CloudFormation events from stack operations (refresh every 5.0 seconds)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------      
+ResourceStatus                                    ResourceType                                      LogicalResourceId                                 ResourceStatusReason
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------      
+CREATE_IN_PROGRESS                                AWS::CloudFormation::Stack                        order-api                                         User Initiated
+CREATE_IN_PROGRESS                                AWS::DynamoDB::Table                              OrderTable                                        -
+CREATE_IN_PROGRESS                                AWS::DynamoDB::Table                              OrderTable                                        Resource creation Initiated
+CREATE_COMPLETE                                   AWS::DynamoDB::Table                              OrderTable                                        -
+CREATE_IN_PROGRESS                                AWS::IAM::Role                                    OrdersFunctionRole                                -
+CREATE_IN_PROGRESS                                AWS::IAM::Role                                    OrdersFunctionRole                                Resource creation Initiated
+CREATE_COMPLETE                                   AWS::IAM::Role                                    OrdersFunctionRole                                -
+CREATE_IN_PROGRESS                                AWS::Lambda::Function                             OrdersFunction                                    -
+CREATE_IN_PROGRESS                                AWS::Lambda::Function                             OrdersFunction                                    Resource creation Initiated
+CREATE_COMPLETE                                   AWS::Lambda::Function                             OrdersFunction                                    -
+CREATE_IN_PROGRESS                                AWS::ApiGateway::RestApi                          ServerlessRestApi                                 -
+CREATE_IN_PROGRESS                                AWS::ApiGateway::RestApi                          ServerlessRestApi                                 Resource creation Initiated
+CREATE_COMPLETE                                   AWS::ApiGateway::RestApi                          ServerlessRestApi                                 -
+CREATE_IN_PROGRESS                                AWS::ApiGateway::Deployment                       ServerlessRestApiDeployment8d89a2308f             -
+CREATE_IN_PROGRESS                                AWS::Lambda::Permission                           OrdersFunctionPutOrderPermissionProd              -
+CREATE_IN_PROGRESS                                AWS::Lambda::Permission                           OrdersFunctionPostOrderPermissionProd             -
+CREATE_IN_PROGRESS                                AWS::Lambda::Permission                           OrdersFunctionGetOrderPermissionProd              -
+CREATE_IN_PROGRESS                                AWS::Lambda::Permission                           OrdersFunctionPutOrderPermissionProd              Resource creation Initiated
+CREATE_IN_PROGRESS                                AWS::Lambda::Permission                           OrdersFunctionGetOrderPermissionProd              Resource creation Initiated
+CREATE_COMPLETE                                   AWS::Lambda::Permission                           OrdersFunctionPutOrderPermissionProd              -
+CREATE_IN_PROGRESS                                AWS::Lambda::Permission                           OrdersFunctionPostOrderPermissionProd             Resource creation Initiated
+CREATE_COMPLETE                                   AWS::Lambda::Permission                           OrdersFunctionGetOrderPermissionProd              -
+CREATE_IN_PROGRESS                                AWS::ApiGateway::Deployment                       ServerlessRestApiDeployment8d89a2308f             Resource creation Initiated
+CREATE_COMPLETE                                   AWS::Lambda::Permission                           OrdersFunctionPostOrderPermissionProd             -
+CREATE_COMPLETE                                   AWS::ApiGateway::Deployment                       ServerlessRestApiDeployment8d89a2308f             -
+CREATE_IN_PROGRESS                                AWS::ApiGateway::Stage                            ServerlessRestApiProdStage                        -
+CREATE_IN_PROGRESS                                AWS::ApiGateway::Stage                            ServerlessRestApiProdStage                        Resource creation Initiated
+CREATE_COMPLETE                                   AWS::ApiGateway::Stage                            ServerlessRestApiProdStage                        -
+CREATE_COMPLETE                                   AWS::CloudFormation::Stack                        order-api                                         -
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------      
+
+CloudFormation outputs from deployed stack
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------   
+Outputs
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------   
+Key                 OrdersApi
+Description         API Gateway endpoint URL for Prod stage
+Value               https://vq1via0yi1.execute-api.ap-southeast-2.amazonaws.com/Prod/orders/
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
 ```
 
 Follow the prompts to configure the deployment settings (e.g., stack name, AWS region, etc.). Once the deployment is complete, SAM will output the API Gateway endpoint URL.
