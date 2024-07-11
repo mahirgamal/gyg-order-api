@@ -99,7 +99,7 @@ sam init
     Configuration file: order-api/samconfig.toml
 ```
   
-![alt text](image.png)
+![alt text](image-1.png)
 
 
 ### 2. Navigate to the Project Directory
