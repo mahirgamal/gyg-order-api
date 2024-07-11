@@ -210,11 +210,11 @@ cd src
 
 #### 5. Create the `orders.js` Handler
 
-Create the `orders.js` file in the `src` directory and add your Lambda function logic.
+Create the [`orders.js`](https://github.com/mahirgamal/gyg-order-api/blob/main/src/orders.js) file in the `src` directory and add your Lambda function logic.
 
 #### 6. Update the `template.yaml`
 
-Ensure your `template.yaml` file in the root directory is properly configured.
+Ensure your [`template.yaml`](https://github.com/mahirgamal/gyg-order-api/blob/main/template.yaml) file in the root directory is properly configured.
 
 #### 7. Build and Deploy with AWS SAM
 
