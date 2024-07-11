@@ -45,86 +45,59 @@ sam init
 ```
 ##### Choice: 1
 
--Choose an AWS Quick Start application template
+##### Choose an AWS Quick Start application template
+```
+1- Hello World Example
+2- Data processing
+3- Hello World Example with Powertools for AWS Lambda
+4- Multi-step workflow
+5- Scheduled task
+6- Standalone function
+7- Serverless API
+8- Infrastructure event management
+9- Lambda Response Streaming
+10- Serverless Connector Hello World Example
+11- Multi-step workflow with Connectors
+12- GraphQLApi Hello World Example
+13- Full Stack
+14- Lambda EFS example
+15- DynamoDB Example
+16- Machine Learning
+```
+##### Template: 7
 
-        1 - Hello World Example
-
-        2 - Data processing
-
-        3 - Hello World Example with Powertools for AWS Lambda
-
-        4 - Multi-step workflow
-
-        5 - Scheduled task
-
-        6 - Standalone function
-
-        7 - Serverless API
-
-        8 - Infrastructure event management
-
-        9 - Lambda Response Streaming
-
-        10 - Serverless Connector Hello World Example
-
-        11 - Multi-step workflow with Connectors
-
-        12 - GraphQLApi Hello World Example
-
-        13 - Full Stack
-
-        14 - Lambda EFS example
-
-        15 - DynamoDB Example
-
-        16 - Machine Learning
-
-Template: 7
-
--Which runtime would you like to use?
-
-        1 - dotnet8
-
-        2 - dotnet6
-
-        3 - nodejs20.x
-
-        4 - nodejs18.x
-
-        5 - nodejs16.x
-
-Runtime: 3
+##### Which runtime would you like to use?
+```
+1- dotnet8
+2- dotnet6
+3- nodejs20.x
+4- nodejs18.x
+5- nodejs16.x
+```
+##### Runtime: 3
 
 
--Would you like to enable X-Ray tracing on the function(s) in your application?  [y/N]: y
+##### Would you like to enable X-Ray tracing on the function(s) in your application?  [y/N]: y
 
--Would you like to enable monitoring using CloudWatch Application Insights?
+##### Would you like to enable monitoring using CloudWatch Application Insights?
 
--Would you like to set Structured Logging in JSON format on your Lambda functions?  [y/N]: y
+##### Would you like to set Structured Logging in JSON format on your Lambda functions?  [y/N]: y
 
--Project name [sam-app]: order-api
+##### Project name [sam-app]: order-api
 
-Then it will give a summary for the project
-
+####Then it will give a summary for the project
+```
     -----------------------
-
     Generating application:
-
     -----------------------
-
     Name: order-api
-
     Runtime: nodejs20.x
-
     Architectures: x86_64
-
     Dependency Manager: npm
-
     Application Template: quick-start-web
-
     Output Directory: .
-
     Configuration file: order-api/samconfig.toml
+```
   
 
 
