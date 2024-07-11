@@ -40,10 +40,9 @@ sam init
 
 ##### Which template source would you like to use?
 ```
-        1 - AWS Quick Start Templates
-        2 - Custom Template Location
+1- AWS Quick Start Templates
+2- Custom Template Location
 ```
-
 ##### Choice: 1
 
 -Choose an AWS Quick Start application template
