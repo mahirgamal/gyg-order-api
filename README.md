@@ -40,8 +40,8 @@ sam init
 
 ##### Which template source would you like to use?
 ```
-1- AWS Quick Start Templates
-2- Custom Template Location
+      1- AWS Quick Start Templates
+      2- Custom Template Location
 ```
 ##### Choice: 1
 
@@ -99,7 +99,7 @@ sam init
     Configuration file: order-api/samconfig.toml
 ```
   
-
+![alt text](image.png)
 
 
 ### 2. Navigate to the Project Directory
